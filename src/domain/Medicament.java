@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import factory.SymptonFactory;
+
 
 public class Medicament {
 	private String name;
@@ -30,8 +32,7 @@ public class Medicament {
 		Symptom s2=null;
 		Symptom s=getSymptomByName(symptom);
 		if (s==null) {
-
-			s2=createSymptom(symptom);
+			s2=new SymptonFactory().createSymptom(symptom); 
 			symptoms.add(s2);
 		}
 		return s2;
