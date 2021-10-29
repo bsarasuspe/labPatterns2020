@@ -17,16 +17,19 @@ public class Main {
 		PacientObserverGUI pacientGUI= new PacientObserverGUI (pacient);
 		PacientSymptomGUI frame = new PacientSymptomGUI ((Covid19Pacient) pacient);
 		PacientThermometerGUI termometroa = new PacientThermometerGUI(pacient);
+		SemaphorGUI s = new SemaphorGUI(pacient);
 		
 		Observable zapato=new Covid19Pacient("zapato", 20);
 		PacientObserverGUI pacientGUI2= new PacientObserverGUI (zapato);
 		PacientSymptomGUI frame2 = new PacientSymptomGUI ((Covid19Pacient) zapato);
 		PacientThermometerGUI termometroa2 = new PacientThermometerGUI(zapato);
+		SemaphorGUI s2 = new SemaphorGUI(zapato);
 		
 		Observable alfredo=new Covid19Pacient("alfredo", 20);
 		PacientObserverGUI pacientGUI3= new PacientObserverGUI (alfredo);
 		PacientSymptomGUI frame3 = new PacientSymptomGUI ((Covid19Pacient) alfredo);
 		PacientThermometerGUI termometroa3 = new PacientThermometerGUI(alfredo);
+		SemaphorGUI s3 = new SemaphorGUI(alfredo);
 	}
 
 
