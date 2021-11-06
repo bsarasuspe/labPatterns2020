@@ -7,20 +7,20 @@ import java.util.Map;
 
 import domain.Symptom;
 
-public class SeverityInvertedIterator implements InvertedIterator{
+public class SymptomInvertedIterator implements InvertedIterator{
 	
-	ArrayList<Integer> severity;
+	ArrayList<Symptom> sintomak;
 	int position=0;
 	
-	public SeverityInvertedIterator(ArrayList<Integer> severity) {
-		this.severity=severity;
-		position=severity.size();
+	public SymptomInvertedIterator(ArrayList<Symptom> sintomak) {
+		this.sintomak=sintomak;
+		position=sintomak.size();
 	}
 	
 	@Override
 	public Object previous() {
 		position--;
-		return severity.get(position);
+		return sintomak.get(position);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class SeverityInvertedIterator implements InvertedIterator{
 
 	@Override
 	public void goLast() {
-		position=severity.size();
+		position=sintomak.size();
 	}
 
 }

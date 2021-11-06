@@ -9,29 +9,24 @@ import domain.Symptom;
 
 public class AdapterPacient {
 
-	private ArrayList<String> izenak = new ArrayList<String>();
-	private ArrayList<Integer> severity = new ArrayList<Integer>();
+	private ArrayList<Symptom> sintomak = new ArrayList<Symptom>();
+	
 	
 	public AdapterPacient(Covid19Pacient pacient) {
 		
 		Set<Symptom> sympton=pacient.getSymptoms();
-		izenak = new ArrayList<String>();
-		severity = new ArrayList<Integer>();
-		
 		
 		Iterator<Symptom> ite=sympton.iterator();
 		while(ite.hasNext()) {
-			izenak.add(ite.next().getName());
-			severity.add(ite.next().getSeverityIndex());
+			Symptom aux=ite.next();
+			sintomak.add(aux);
 		}
 	}
 	
-	public ArrayList<String> getIzenak(){
-		return izenak;
+	public ArrayList<Symptom> getSintomak(){
+		return sintomak;
 	}
 	
-	public ArrayList<Integer> getSeverity(){
-		return severity;
-	}
+
 	
 }

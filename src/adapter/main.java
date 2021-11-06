@@ -12,7 +12,6 @@ public class main {
 		InvertedIterator symtomName;
 		InvertedIterator severityIndex;
 		
-		
 		Covid19Pacient p1 = new Covid19Pacient("Pedro", 30);
 		p1.addSymptomByName("fiebre", 5);
 		p1.addSymptomByName("tos seca", 5);
@@ -22,21 +21,22 @@ public class main {
 
 		AdapterPacient adapter = new AdapterPacient(p1);
 		
-		
-		InvertedIterator izenak=new IzenakInvertedIterator(adapter.getIzenak());
-		InvertedIterator severity=new SeverityInvertedIterator(adapter.getSeverity());
 		SymptomNameComparator<Object> comparatorIzenak=new SymptomNameComparator<Object>();
 		SeverityIndexComparator<Object> comparatorSeverity=new SeverityIndexComparator<Object>();
+		SymptomInvertedIterator sintomak=new SymptomInvertedIterator(adapter.getSintomak());
 		
 		Sorting s1=new Sorting();
-		s1.sortedIterator(izenak, comparatorIzenak);
+
+
+		Iterator i1=s1.sortedIterator(sintomak, comparatorIzenak);
+		while(i1.hasNext())
+			System.out.println(i1.next());
 		
-		s1.sortedIterator(severity, comparatorSeverity);
+		System.out.println();
 		
-		/*
-		Iterator i=p1.iterator();
-		while(i.hasNext())
-			System.out.println(i.next());*/
+		Iterator i2=s1.sortedIterator(sintomak, comparatorSeverity);
+		while(i2.hasNext())
+			System.out.println(i2.next());
 		
 		
 	}
